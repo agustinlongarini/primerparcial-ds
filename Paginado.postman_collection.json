@@ -1,0 +1,787 @@
+{
+	"info": {
+		"_postman_id": "abfb919a-3b71-4fc7-adfc-981ff2c5ef72",
+		"name": "Paginado",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29573394"
+	},
+	"item": [
+		{
+			"name": "Persona",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"nombre\": \"Luis\",\r\n    \"apellido\": \"Gonzales\",\r\n    \"dni\": 35699012,\r\n    \"domicilio\": {\r\n        \"id\": 2,\r\n        \"calle\": \"Yapeyu\",\r\n        \"numero\": 80,\r\n        \"localidad\": {\r\n            \"id\": 2,\r\n            \"denominacion\": \"San Martin\"\r\n        }\r\n    },\r\n    \"libros\": [\r\n        {\r\n        \"id\": 2,\r\n        \"titulo\": \"Libro dos\",\r\n        \"fecha\": 12102023,\r\n        \"genero\": \"Aventura\",\r\n        \"paginas\": 187,\r\n        \"autores\": [\r\n            {\r\n            \"id\": 2,\r\n            \"nombre\": \"Juan\",\r\n            \"apellido\": \"Justo\",\r\n            \"biografia\": \"Etc.\"\r\n            }\r\n        ]\r\n    }\r\n]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/personas",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/personas",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorNombreMethodPaged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/personas/buscarPorTituloMethodPaged?nombre=Agu",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"buscarPorTituloMethodPaged"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Agu"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorNombreJPQL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/personas/buscarPorTituloJPQL?nombre=Agu",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"buscarPorTituloJPQL"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Agu"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorNombreNative",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/personas/buscarPorNombreNative?nombre=Agu",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"buscarPorNombreNative"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Agu"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorNombreAscendente",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/personas/buscarPorNombreAscendente",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"personas",
+								"buscarPorNombreAscendente"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Autor",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"nombre\" : \"Juan\",\r\n    \"apellido\": \"Justo\",\r\n    \"biografia\" : \"Etc.\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/autores",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/autores",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorNombreMethodPaged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/autores/buscarPorNombreMethodPaged?nombre=Liliana",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"buscarPorNombreMethodPaged"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Liliana"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorNombreJPQL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/autores/buscarPorNombreJPQL?nombre=Liliana",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"buscarPorNombreJPQL"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Liliana"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorNombreNative",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/autores/buscarPorNombreNative?nombre=Liliana",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"autores",
+								"buscarPorNombreNative"
+							],
+							"query": [
+								{
+									"key": "nombre",
+									"value": "Liliana"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Localidad",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"denominacion\" : \"San Martin\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/localidades",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/localidades",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorDenominacionMethodPaged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/localidades/buscarPorDenominacionMethodPaged?denominacion=Guaymallen",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"buscarPorDenominacionMethodPaged"
+							],
+							"query": [
+								{
+									"key": "denominacion",
+									"value": "Guaymallen"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorDenominacionJPQL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/localidades/buscarPorDenominacionJPQL?denominacion=Guaymallen",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"buscarPorDenominacionJPQL"
+							],
+							"query": [
+								{
+									"key": "denominacion",
+									"value": "Guaymallen"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorDenominacionNative",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/localidades/buscarPorDenominacionNative?denominacion=Guaymallen",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"localidades",
+								"buscarPorDenominacionNative"
+							],
+							"query": [
+								{
+									"key": "denominacion",
+									"value": "Guaymallen"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Domicilio",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"calle\" : \"Yapeyu\",\r\n    \"numero\" : \"80\",\r\n    \"localidad\" : {\r\n        \"id\": 2,\r\n        \"denominacion\" : \"San Martin\"\r\n    }\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/domicilios",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/domicilios",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorCalleMethodPaged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/domicilios/buscarPorCalleMethodPaged?calle=San",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"buscarPorCalleMethodPaged"
+							],
+							"query": [
+								{
+									"key": "calle",
+									"value": "San"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorCalleJPQL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/domicilios/buscarPorCalleJPQL?calle=San",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"buscarPorCalleJPQL"
+							],
+							"query": [
+								{
+									"key": "calle",
+									"value": "San"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorCalleNative",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/domicilios/buscarPorCalleNative?calle=San",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"domicilios",
+								"buscarPorCalleNative"
+							],
+							"query": [
+								{
+									"key": "calle",
+									"value": "San"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Libro",
+			"item": [
+				{
+					"name": "Create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"titulo\" : \"Libro dos\",\r\n    \"fecha\": 12102023,\r\n    \"genero\": \"Aventura\",\r\n    \"paginas\": 187,\r\n    \"autores\": [{\r\n        \"id\": 2,\r\n        \"nombre\": \"Juan\",\r\n        \"apellido\": \"Justo\",\r\n        \"biografia\": \"etc.\"\r\n    }]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/libros",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/libros",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorTituloMethodPaged",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/libros/buscarPorTituloMethodPaged?titulo=Libro",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros",
+								"buscarPorTituloMethodPaged"
+							],
+							"query": [
+								{
+									"key": "titulo",
+									"value": "Libro"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorTituloJPQL",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/libros/buscarPorTituloJPQL?titulo=Libro",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros",
+								"buscarPorTituloJPQL"
+							],
+							"query": [
+								{
+									"key": "titulo",
+									"value": "Libro"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorTituloNative",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/libros/buscarPorTituloNative?titulo=Libro",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros",
+								"buscarPorTituloNative"
+							],
+							"query": [
+								{
+									"key": "titulo",
+									"value": "Libro"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "BuscarPorGenero",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "https://parcial-paginado.onrender.com/api/v1/libros/buscarPorGenero?genero=Fantasia",
+							"protocol": "https",
+							"host": [
+								"parcial-paginado",
+								"onrender",
+								"com"
+							],
+							"path": [
+								"api",
+								"v1",
+								"libros",
+								"buscarPorGenero"
+							],
+							"query": [
+								{
+									"key": "genero",
+									"value": "Fantasia"
+								}
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
